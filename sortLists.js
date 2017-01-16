@@ -31,8 +31,8 @@ $(function(){
 		    }else{
 			    var letter = _this.text();
 			    if($('#'+letter).length>0){
-				    var LetterTop = $('#'+letter).position().top;
-				    $('html,body').animate({scrollTop: LetterTop-45+'px'}, 300);
+				    var LetterTop = $(this).parents('.sort-item-list').find('#'+letter).position().top;
+				    $('html,body').animate({scrollTop: LetterTop-25+'px'}, 100);
 			    }
 		    }
 	    })
@@ -53,8 +53,8 @@ function initials(codeLists,nameLists) {//公众号排序
 	codeLists.find('ul').append('<li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>Q</li><li>R</li><li>S</li><li>T</li><li>U</li><li>V</li><li>W</li><li>X</li><li>Y</li><li>Z</li><li>#</li>');
 	var SortBox=nameLists;//通讯录列表
         SortList=SortBox.find(".sort_list");//单个通讯录中人
-    SortList.sort(asc_sort).appendTo(SortBox);//按首字母排序
-    function asc_sort(a, b) {
+        SortList.sort(asc_sort).appendTo(SortBox);//按首字母排序
+        function asc_sort(a, b) {
         return makePy($(b).find('.num_name').text().charAt(0))[0].toUpperCase() < makePy($(a).find('.num_name').text().charAt(0))[0].toUpperCase() ? 1 : -1;
     }
 
@@ -164,11 +164,15 @@ function initials(codeLists,nameLists) {//公众号排序
                 break;
         }
     };
-    var codeListsHeight = parseInt(nameLists.css('height'));
-        if (codeListsHeight < 60){
-            codeListsHeight = 600 ;
-        };
-    var codeItemHeight = parseInt(codeListsHeight/28);
+
+//    var codeListsHeight = parseInt(nameLists.css('height'));
+//        if (codeListsHeight < 60){
+//            codeListsHeight = 600 ;
+//        };
+//    var codeItemHeight = parseInt(codeListsHeight/28);
+//        codeLists.find('ul').css('height',codeListsHeight);
+//        codeLists.find('ul li').css('height',codeItemHeight);
+	var codeListsHeight = 800;
         codeLists.find('ul').css('height',codeListsHeight);
-        codeLists.find('ul li').css('height',codeItemHeight);
+        codeLists.find('ul li').css('height',800/28);
 }
