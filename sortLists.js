@@ -1,13 +1,11 @@
-
 /**
  * 原作者 自由驱动工作室作者：林鑫
  * 无法联系到原作者
  */
-
 /**
  * 多列通讯录,首字母检索通讯录
  * flyxz@126.com
- * freedgo@github.com
+ * https://github.com/FreedGo/jquery-szmjs
  */
 $(function(){
 
