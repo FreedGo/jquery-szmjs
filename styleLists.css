@@ -1,4 +1,16 @@
+*{
+    margin:0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+.singleMiddle{
+    width:640px;
+    font-family:微软雅黑;
+    margin: 0 auto;
 
+}
 header.fixed{
     /*position: fixed;*/
     /*left: 0;*/
@@ -6,13 +18,20 @@ header.fixed{
     z-index: 99;
 }
 .header{
-    margin:0 20px;
     text-align: center;
     color: #4e4a49;
     font-size: 1em;
     height: 45px;
     line-height: 45px;
     position: relative;
+}
+.header>span{
+    width:160px;
+    display: inline-block;
+    float: left;
+}
+.header>span.selected{
+    color: red;
 }
 #letter{
     width: 100px;
@@ -37,8 +56,8 @@ header.fixed{
     margin:25px 0px 0px 25px;
 }
 .sort_box{
-    width: 400px;
-    padding-top: 45px;
+    width: 570px;
+    /*padding-top: 45px;*/
     overflow: hidden;
     float: left;
 }
@@ -74,6 +93,7 @@ header.fixed{
     color:#787878;
     font-size: 14px;
     border-bottom:1px solid #ddd;
+    background-color: #fff;
 }
 .initials{
     /*position: fixed;*/
@@ -82,11 +102,11 @@ header.fixed{
     right: 0px;
     height: 100%;
     width: 15px;
-    padding-right: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     z-index: 99;
     background: rgba(145,145,145,0);
+    cursor: pointer;
 }
 .initials li img{
     width: 14px;
@@ -94,9 +114,17 @@ header.fixed{
 
 .sort-item-list{
     float: left;
-    width:500px;
+    width:600px;
+    display: none;
+}
+.sort-item-list.on{
+    display: block;
 }
 .sort-lists{
-    width:100%;
+    width:600px;
     overflow: hidden;
+    margin:0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    /*border:#ccc solid 1px;*/
 }

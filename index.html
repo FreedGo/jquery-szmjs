@@ -1,94 +1,525 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=no">
-<title>jQuery首字母检索手机通讯录模板</title>
-<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Title</title>
+	<link rel="stylesheet" href="./styleLists.css">
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="sortLists.js"></script>
+	<script src="jquery.charfirst.pinyin.js"></script>
 </head>
 <body>
-
-	<header class="fixed">
-		<div class="header">
-			通讯录
-		</div>
-	</header>
-
-	<div id="letter" ></div>
-	<div class="sort_box">
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img.png" alt="">
-			</div>
-			<div class="num_name">张三</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img2.png" alt="">
-			</div>
-			<div class="num_name">李四</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img3.png" alt="">
-			</div>
-			<div class="num_name">王五</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img.png" alt="">
-			</div>
-			<div class="num_name">刘六</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img2.png" alt="">
-			</div>
-			<div class="num_name">马七</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img.png" alt="">
-			</div>
-			<div class="num_name">黄八</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img2.png" alt="">
-			</div>
-			<div class="num_name">莫九</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img3.png" alt="">
-			</div>
-			<div class="num_name">陈十</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img.png" alt="">
-			</div>
-			<div class="num_name">a九</div>
-		</div>
-		<div class="sort_list">
-			<div class="num_logo">
-				<img src="img/img2.png" alt="">
-			</div>
-			<div class="num_name">1十</div>
+<div class="singleMiddle">
+	<script type="text/javascript">
+		$(function () {
+			// 点击切换通讯录类别
+			var iTong;
+			$('.header span').click(function (event) {
+				$(this).addClass('selected').siblings('span').removeClass('selected');
+				iTong = $(this).index();
+				// 控制通讯录列表的显示与隐藏
+				$('.sort-item-list').eq(iTong).fadeIn(200).siblings().hide();
+			});
+		});
+	</script>
+	<div class="fixed">
+		<div class="header clearfix">
+			<span class="selected">我的好友1</span>
+			<span >我的好友2</span>
+			<span >我的好友3</span>
+			<span >我的好友4</span>
 		</div>
 	</div>
-	<div class="initials">
-		<ul>
-			<li><img src="img/068.png"></li>
-		</ul>
-	</div>
+	<div id="letter"></div>
+	<div class="sort-lists">
+		<!--我的好友列表1-->
+		<div class="sort-item-list on">
+			<!---教室操作--->
+			<div class="sort_box ">
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">陈晨1</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">张三</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">李四</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">王五</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">赵六</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">董七</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">冯绍峰</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">哥哥</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌3</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌4</a>
+					</div>
+				</div>
 
-	<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="jquery.charfirst.pinyin.js"></script>
-	<script type="text/javascript" src="sort.js"></script>
+			</div>
+			<div class="initials">
+				<ul style="height: 800px;"></ul>
+			</div>
+		</div>
+		<!--/我的好友列表-->
+		<!--我的好友列表1-->
+		<div class="sort-item-list">
+			<!---教室操作--->
+			<div class="sort_box ">
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">陈晨2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">王五</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">赵六</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">冯绍峰</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">哥哥</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌3</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌4</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="initials">
+				<ul style="height: 800px;"></ul>
+			</div>
+		</div>
+		<!--/我的好友列表-->
+		<!--我的好友列表1-->
+		<div class="sort-item-list">
+			<!---教室操作--->
+			<div class="sort_box ">
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">陈晨2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">张三</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">李四</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">王五</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">赵六</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">董七</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">冯绍峰</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">哥哥</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌3</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌4</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="initials">
+				<ul style="height: 800px;"></ul>
+			</div>
+		</div>
+		<!--/我的好友列表-->
+		<!--我的好友列表1-->
+		<div class="sort-item-list">
+			<!---教室操作--->
+			<div class="sort_box ">
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">陈晨4</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">李四</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">王五</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">赵六</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">董七</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">冯绍峰</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">哥哥</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌2</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌3</a>
+					</div>
+				</div>
+				<div class=" sort_list">
+					<div class="num_logo">
+						<a href="/e/space/?userid=696">
+							<img src="img/img.png" height="326" width="322"/>
+						</a>
+					</div>
+					<div class="num_name">
+						<a href="/e/space/?userid=696">胡歌4</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="initials">
+				<ul style="height: 800px;"></ul>
+			</div>
+		</div>
+		<!--/我的好友列表-->
+
+	</div>
+</div>
 </body>
 </html>
